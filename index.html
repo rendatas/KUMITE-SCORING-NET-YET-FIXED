@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kumite Scoring System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kumite Scoring System</h1>
+      <div class="timer">
+        <label for="duration">Set Duration: </label>
+        <select id="duration">
+          <option value="180">3:00</option>
+          <option value="90">1:30</option>
+          <option value="60">1:00</option>
+          <option value="custom">Custom</option>
+        </select>
+        <div id="custom-time" style="display: none">
+          <input
+            type="number"
+            id="custom-minutes"
+            placeholder="Minutes"
+            min="0"
+            max="59"
+          />
+          <input
+            type="number"
+            id="custom-seconds"
+            placeholder="Seconds"
+            min="0"
+            max="59"
+          />
+        </div>
+        <button id="start">Start</button>
+        <button id="stop" disabled>Stop</button>
+      </div>
+      <div id="countdown">03:00</div>
+
+      <div class="scoreboard">
+        <!-- Aka (Red) -->
+        <div class="player" id="red-player">
+          <h2>Aka (Red)</h2>
+          <div class="score" id="red-score">0</div>
+          <div class="points">
+            <button id="sensu-red" onclick="toggleSensu('red')">Sensu</button>
+            <button onclick="updateScore('red', 3)">Ippon (3)</button>
+            <button onclick="updateScore('red', 2)">Wazari (2)</button>
+            <button onclick="updateScore('red', 1)">Yuko (1)</button>
+            <button onclick="updateScore('red', 8)">Hantei</button>
+          </div>
+          <div class="penalties">
+            <button onclick="updatePenalty('red', 'C1')">C1</button>
+            <button onclick="updatePenalty('red', 'C2')">C2</button>
+            <button onclick="updatePenalty('red', 'C3')">C3</button>
+            <button onclick="updatePenalty('red', 'HC')">HC</button>
+          </div>
+          <div id="red-penalties" class="penalty-display"></div>
+          <button class="reset" onclick="resetPlayer('red')">Reset</button>
+        </div>
+
+        <!-- Ao (Blue) -->
+        <div class="player" id="blue-player">
+          <h2>Ao (Blue)</h2>
+          <div class="score" id="blue-score">0</div>
+          <div class="points">
+            <button id="sensu-blue" onclick="toggleSensu('blue')">Sensu</button>
+            <button onclick="updateScore('blue', 3)">Ippon (3)</button>
+            <button onclick="updateScore('blue', 2)">Wazari (2)</button>
+            <button onclick="updateScore('blue', 1)">Yuko (1)</button>
+            <button onclick="updateScore('blue', 8)">Hantei</button>
+          </div>
+          <div class="penalties">
+            <button onclick="updatePenalty('blue', 'C1')">C1</button>
+            <button onclick="updatePenalty('blue', 'C2')">C2</button>
+            <button onclick="updatePenalty('blue', 'C3')">C3</button>
+            <button onclick="updatePenalty('blue', 'HC')">HC</button>
+          </div>
+          <div id="blue-penalties" class="penalty-display"></div>
+          <button class="reset" onclick="resetPlayer('blue')">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

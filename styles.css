@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Timer Section */
+.timer {
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+#custom-time input {
+  width: 60px;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Scoreboard Section */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.player {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+  border: 3px solid #0000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.player h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Penalties */
+.penalties {
+  margin-top: 10px;
+}
+
+.penalty-display {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.penalty {
+  background-color: #ffc107;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.penalty:hover {
+  background-color: #e0a800;
+}
+
+/* Reset Button */
+.reset {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#red-player {
+  background-color: #ffff; /* Light Red for Aka */
+  border-color: red;
+}
+
+#blue-player {
+  background-color: #ffff; /* Light Blue for Ao */
+  border-color: blue;
+}
+.reset:hover {
+  background-color: #a71d2a;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .scoreboard {
+    flex-direction: column;
+  }
+
+  .player {
+    margin: 10px 0;
+  }
+}
+
+/* Style for Sensu Button */
+button#sensu-red,
+button#sensu-blue {
+  background-color: transparent;
+  color: #333;
+  border: 3px solid #333;
+}
+
+button#sensu-red:hover,
+button#sensu-blue:hover {
+  background-color: #e0e0e0;
+}
+
+button#sensu-red[style="color: green;"],
+button#sensu-blue[style="color: green;"] {
+  color: green;
+  font-weight: bold;
+}
+
+/* Make Sensu clickable and active */
+button#sensu-red:focus,
+button#sensu-blue:focus {
+  outline: none;
+}
